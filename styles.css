@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f3f2ef;
+    color: #1c1c1c;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.container {
+    flex: 1;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.feed-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-details h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1c1c1c;
+    margin-bottom: 2px;
+}
+
+.profile-headline {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 2px;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #666666;
+}
+
+.post-menu {
+    position: relative;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #666666;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.menu-btn:hover {
+    background-color: #f3f2ef;
+}
+
+/* Post Content */
+.post-content {
+    padding: 0 16px 16px;
+}
+
+.post-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1c1c1c;
+}
+
+/* Carousel */
+.carousel-container {
+    position: relative;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 16px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Navigation Arrows */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    color: #1c1c1c;
+}
+
+.carousel-container:hover .carousel-nav {
+    opacity: 1;
+}
+
+.carousel-nav:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.prev-btn {
+    left: 12px;
+}
+
+.next-btn {
+    right: 12px;
+}
+
+.carousel-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-nav:disabled:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: none;
+}
+
+/* Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #0A66C2;
+}
+
+.indicator:hover {
+    background-color: #666;
+}
+
+/* Engagement Bar */
+.engagement-bar {
+    border-top: 1px solid #e3e3e3;
+    padding: 8px 16px;
+}
+
+.engagement-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #f3f2ef;
+    color: #1c1c1c;
+}
+
+.action-btn:hover svg {
+    stroke: #1c1c1c;
+}
+
+/* Loading State */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #666;
+}
+
+.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #0A66C2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Left Navigation Buttons */
+.left-nav-buttons {
+    position: fixed;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    z-index: 1000;
+}
+
+.nav-button {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 4px solid #0A66C2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #0A66C2;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.nav-button:hover {
+    background: #0A66C2;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.nav-button:active {
+    transform: scale(1.02);
+}
+
+.nav-button svg {
+    width: 60px;
+    height: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .carousel-wrapper {
+        height: 300px;
+    }
+    
+    .engagement-actions {
+        gap: 4px;
+    }
+    
+    .action-btn {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    .action-btn span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-wrapper {
+        height: 250px;
+    }
+    
+    .profile-details h3 {
+        font-size: 14px;
+    }
+    
+    .profile-headline {
+        font-size: 12px;
+    }
+}

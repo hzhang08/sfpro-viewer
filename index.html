@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Left Navigation Buttons -->
+    <div class="left-nav-buttons">
+        <button class="nav-button nav-up" id="navUpBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 14l5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="nav-button nav-down" id="navDownBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="container">
+        <!-- LinkedIn-style Feed Card -->
+        <div class="feed-card">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-info">
+                    <img src="https://media.licdn.com/dms/image/v2/C5603AQFtBBmfejwSag/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516613262389?e=1770249600&v=beta&t=O8iTQSYdhJvH1ap6_2CzeHnhK-f71WGkxl__e_lc_js" alt="Profile" class="profile-photo">
+                    <div class="profile-details">
+                        <h3 class="profile-name">Henry Zhang</h3>
+                        <p class="profile-headline">Software Engineer</p>
+                        <p class="timestamp">2 hours ago</p>
+                    </div>
+                </div>
+                <div class="post-menu">
+                    <button class="menu-btn">...</button>
+                </div>
+            </div>
+
+            <!-- Post Content -->
+            <div class="post-content">
+                <p>Check out these amazing images!</p>
+            </div>
+
+            <!-- PDF/Image Carousel -->
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Images will be loaded here -->
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-nav prev-btn" id="prevBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-nav next-btn" id="nextBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Page Indicators -->
+                <div class="carousel-indicators" id="indicators">
+                    <!-- Indicators will be added dynamically -->
+                </div>
+            </div>
+
+            <!-- Engagement Bar -->
+            <div class="engagement-bar">
+                <div class="engagement-actions">
+                    <button class="action-btn like-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span>Like</span>
+                    </button>
+                    <button class="action-btn comment-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span>Comment</span>
+                    </button>
+                    <button class="action-btn share-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span>Share</span>
+                    </button>
+                    <button class="action-btn send-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span>Send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
